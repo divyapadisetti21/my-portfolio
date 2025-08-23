@@ -11,5 +11,5 @@ Users can also download my resume directly from the website and contact me throu
 
 - Email : divyatejaswini216@gmail.com
 -  LinkedIn : https://www.linkedin.com/in/divya-padisetti-2b7724250/
-- GitHub(https://github.com/divyapadisetti21)
+- [GitHub](https://github.com/divyapadisetti21)
 
