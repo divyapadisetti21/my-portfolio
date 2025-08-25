@@ -8,7 +8,7 @@ const ProfileData = {
     "I enjoy designing tech websites.",
   ],
   resume:
-    "https://drive.google.com/file/d/1FmilnPkB5nFQQHHdTyU0O-1wb9TTv9El/view?usp=drive_link",
+    "https://drive.google.com/file/d/1RR-hw6NleT8RfaYwUFsPNBK0MAvZbYAl/view?usp=drive_link",
 };
 
 export default ProfileData;
