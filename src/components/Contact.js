@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // removed FaPhoneAlt
 import SocialHandles from "./SocialHandles";
 import ContactData from "../data/contact";
 
@@ -62,15 +62,7 @@ const Contact = () => {
             >
               <SocialHandles />
             </div>
-            // <div
-            //   data-aos="fade-right"
-            //   data-aos-duration="1000"
-            //   data-aos-once="false"
-            //   className="flex gap-3 items-center mb-4 md:gap-2 lg:gap-5"
-            // >
-            //   <FaPhoneAlt className="text-white" />
-            //   <p className="text-white md:text-lg ">{ContactData.phone}</p>
-            // </div>
+            {/* Removed Phone Section */}
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
