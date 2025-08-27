@@ -1,35 +1,36 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // removed FaPhoneAlt
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import SocialHandles from "./SocialHandles";
 import ContactData from "../data/contact";
 
 const Contact = () => {
   const formRef = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm(
-      "service_o06zx5t",   // ✅ new service ID
-      "template_lg8ahdf",  // keep same template ID
-      formRef.current,
-      "_8hE7B_7PzOSTxPxm"  // same public key
-    )
-
+    emailjs
+      .sendForm(
+        "service_p9kqwuf",   // ✅ Your new Service ID
+        "template_ftqm2v6",  // ✅ Your new Template ID
+        formRef.current,
+        "YOUR_PUBLIC_KEY_HERE" // ✅ Replace with your Public Key
+      )
       .then(
         () => {
-          toast.success("Message sent successfully");
+          toast.success("Message sent successfully!");
           e.target.reset();
         },
         (error) => {
-          console.log(error.text);
-          toast.error("Unable to send message!");
+          console.error("EmailJS Error:", error.text);
+          toast.error("Unable to send message. Check your EmailJS settings!");
         }
       );
   };
 
   return (
-    <section className="text-gray-600 body-font ">
+    <section className="text-gray-600 body-font">
       <div className="px-3 py-5 mx-auto text-center md:mt-7 sm:mx-7 md:mx-12 lg:mx-32 xl:mx-56">
         <div id="contact" className="flex flex-col text-center w-full mb-4">
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-black">
@@ -39,12 +40,14 @@ const Contact = () => {
             data-aos="zoom-in"
             data-aos-duration="1000"
             data-aos-once="false"
-            className="text-lg font-medium leading-relaxed text-dark-orange "
+            className="text-lg font-medium leading-relaxed text-dark-orange"
           >
             Let's keep in touch
           </p>
         </div>
+
         <div className="flex flex-col gap-2 md:flex-row w-full mx-auto rounded-xl bg-darkblue p-4 md:gap-7 lg:gap-9 lg:rounded-2xl xl:gap-10">
+          {/* Left Section */}
           <div className="p-2 w-full text-center lg:p-5 xl:p-7 md:w-1/2 lg:w-4/6">
             <h1
               data-aos="zoom-in-down"
@@ -54,6 +57,7 @@ const Contact = () => {
             >
               Get In Touch
             </h1>
+
             <div
               data-aos="zoom-in-down"
               data-aos-duration="1000"
@@ -62,7 +66,8 @@ const Contact = () => {
             >
               <SocialHandles />
             </div>
-            {/* Send mail directly via Gmail */}
+
+            {/* Email Link (opens Gmail directly) */}
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -79,6 +84,8 @@ const Contact = () => {
                 {ContactData.email}
               </a>
             </div>
+
+            {/* Address */}
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -91,6 +98,8 @@ const Contact = () => {
               </p>
             </div>
           </div>
+
+          {/* Contact Form */}
           <form
             data-aos="zoom-in-up"
             data-aos-duration="1000"
@@ -99,12 +108,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="flex bg-whitesmoke flex-col p-2 rounded-lg md:w-1/2 md:p-4 lg:px-5 lg:py-7 lg:m-4 lg:w-3/5"
           >
-            <div
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              data-aos-once="false"
-              className="p-2 w-full"
-            >
+            <div className="p-2 w-full">
               <input
                 required
                 placeholder="Name"
@@ -113,12 +117,8 @@ const Contact = () => {
                 className="mb-1 w-full bg-white rounded-md border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black p-2 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              data-aos-once="false"
-              className="p-2 w-full"
-            >
+
+            <div className="p-2 w-full">
               <input
                 required
                 placeholder="Email"
@@ -127,12 +127,8 @@ const Contact = () => {
                 className="mb-1 w-full bg-white rounded-md border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black p-2 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              data-aos-once="false"
-              className="p-2 w-full"
-            >
+
+            <div className="p-2 w-full">
               <textarea
                 required
                 placeholder="Message"
@@ -140,13 +136,9 @@ const Contact = () => {
                 className="mb-1 w-full bg-white rounded-md border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-black p-2 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <div
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              data-aos-once="false"
-              className="p-2 w-full"
-            >
-              <button className=" font-medium mx-auto my-3 text-white bg-dark-orange border-0 py-2 px-12 focus:outline-none hover:scale-110 hover:bg-orange-600 transition duration-500 rounded-xl text-lg">
+
+            <div className="p-2 w-full">
+              <button className="font-medium mx-auto my-3 text-white bg-dark-orange border-0 py-2 px-12 focus:outline-none hover:scale-110 hover:bg-orange-600 transition duration-500 rounded-xl text-lg">
                 Send
               </button>
             </div>
