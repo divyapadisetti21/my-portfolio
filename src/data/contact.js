@@ -1,7 +1,6 @@
 import {FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const ContactData = {
-  phone: "+91 6304447475",
   email: "divyatejaswini216@gmail.com",
   address: "Rajahmundry, Andhra Pradesh, India",
   links: [
