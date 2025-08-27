@@ -62,7 +62,7 @@ const Contact = () => {
             >
               <SocialHandles />
             </div>
-            {/* Email section with Gmail compose link */}
+            {/* Send mail directly via Gmail */}
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
