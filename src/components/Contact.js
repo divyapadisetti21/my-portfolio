@@ -62,7 +62,7 @@ const Contact = () => {
             >
               <SocialHandles />
             </div>
-            {/* Removed Phone Section */}
+            {/* Email section with Gmail compose link */}
             <div
               data-aos="fade-right"
               data-aos-duration="1000"
@@ -71,7 +71,9 @@ const Contact = () => {
             >
               <FaEnvelope className="text-white" />
               <a
-                href={`mailto:${ContactData.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${ContactData.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white md:text-lg"
               >
                 {ContactData.email}
