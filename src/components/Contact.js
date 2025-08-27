@@ -15,7 +15,7 @@ const Contact = () => {
         "service_p9kqwuf",   // ✅ Your new Service ID
         "template_ftqm2v6",  // ✅ Your new Template ID
         formRef.current,
-        "YOUR_PUBLIC_KEY_HERE" // ✅ Replace with your Public Key
+        "7A1QNYDpP5fCT4u46" // ✅ Replace with your Public Key
       )
       .then(
         () => {
