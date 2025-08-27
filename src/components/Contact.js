@@ -9,13 +9,13 @@ const Contact = () => {
   const formRef = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_9inzcz7",
-        "template_lg8ahdf",
-        formRef.current,
-        "_8hE7B_7PzOSTxPxm"
-      )
+    emailjs.sendForm(
+      "service_o06zx5t",   // ✅ new service ID
+      "template_lg8ahdf",  // keep same template ID
+      formRef.current,
+      "_8hE7B_7PzOSTxPxm"  // same public key
+    )
+
       .then(
         () => {
           toast.success("Message sent successfully");
